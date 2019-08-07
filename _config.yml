@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "/jayasou.github.io"
-url: "https://rohanchandra.github.io/"
+url: "https://jayasou.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
