@@ -1,7 +1,7 @@
 ---
 
 layout: category
-title: Algorithm/Queue
+title: Queue
 permalink: '/Algorithm/Queue'
 
 ---
