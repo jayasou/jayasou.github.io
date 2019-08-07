@@ -84,5 +84,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-disqus_url: "https://jayasou.disqus.com"
-disqus_id: "jayasou"
+#disqus_url: "https://jayasou.disqus.com"
+#disqus_id: "jayasou"
