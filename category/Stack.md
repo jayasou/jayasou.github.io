@@ -1,7 +1,7 @@
 ---
 
 layout: category
-title: Algorithm/Stack
+title: Stack
 permalink: '/Algorithm/Stack'
 
 ---
