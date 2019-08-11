@@ -7,19 +7,19 @@ categories: [Web]
 
 ##  nginx 다운로드
 
-~~~
+~~~bash
 $ wget http://nginx.org/download/nginx-1.7.5.tar.gz
 ~~~
 
 ## nginx-rtmp-module 다운로드
 
-~~~
+~~~bash
 $ wget https://github.com/arut/nginx-rtmp-module/zipball/master
 ~~~
 
 ## /usr/local/scr 폴더에 압축 해제
 
-~~~
+~~~bash
 $ tar -zxvf nginx-1.7.5.tar.gz
 $ unzip master.zip
 ~~~
@@ -28,7 +28,7 @@ $ unzip master.zip
 
 압축을 해제하고 나면 nginx-1.7.5 폴더가 생성된다. 이 폴더 안으로 들어가면 configure 이라는 파일이 있다. 이 파일을 다음과 같은 명령어로 실행시키자.
 
-~~~
+~~~bash
 $ ./configure --add-module=/usr/local/scr/nginx-rtmp-module --with-debug
 ~~~
 
@@ -37,25 +37,25 @@ $ ./configure --add-module=/usr/local/scr/nginx-rtmp-module --with-debug
 하지만 이렇게 했을 때 error 메시지를 만날 수도 있다. 
 나는 다음과 같은 메시지를 보게 되었다.
 
-~~~
+~~~bash
 error --with-http_ssl_module', exiting and error: SSL modules require the OpenSSL
 ~~~
 
 자, 이럴 때는 빌드명령어를 다음과 같이 적어준다.
 
-~~~
+~~~bash
 $ ./configure --add-module=/usr/local/scr/nginx-rtmp-module --with-debug --with-http_ssl_module
 ~~~
 
 처음 적었던 빌드 명령어 뒤에 '--with-http_ssl_module' 이 명령어가 추가되었다. 하지만 또 똑같은 error 메시지를 보게 된다면, 다음과 같이 openssl 패키지를 설치하자.
 
-~~~
+~~~bash
 $ yum install -y openssl-devel
 ~~~
 
 다시 한번 두번째 빌드 명령어를 입력해보자. 빌드가 잘 되었는가? 
 
-~~~
+~~~bash
 $ make
 $ make install
 ~~~
@@ -70,7 +70,7 @@ make install 은 파일들을 적당한 디렉토리에 설치한다.
 이렇게 만들어진 nginx 의 설정파일은 그냥 nginx 를 설치했을 때와 다른 설정들이 담겨져있다. 필자는 다음과 같이 생성되었다. 
 아차! 이 설정파일은 '/usr/local/nginx/conf' 폴더 밑에 nginx.conf 파일이다. 설치 후 생성된 nginx 폴더 아래에 있다는 것을 주의하자!
 
-~~~
+~~~bash
 #user  nobody;
 worker_processes  auto;
 events {
@@ -142,30 +142,30 @@ http {
 
 nginx 실행파일은 '/usr/local/nginx/sbin' 아래에 nginx 로 되어있다. 다음의 명령어로 실행시켜보자.
 
-~~~
+~~~bash
 $ ./nginx
 ~~~
 
 잘 실행이 되었는가 ? 필자는 다음과 같은 결과 메시지를 받게 되었다.
 
-~~~
+~~~bash
 [emerg]: unknown directive "aio ...
 ~~~
 
 aio 모듈을 설치하지 않았다. 나에겐 문제가 될게 없었다. 아직은 이 모듈을 사용할 때가 아니다.  다시 nginx.conf 로 가서 수정하였다. 
 
-~~~
+~~~bash
 aio on;
 ~~~
 
-~~~
+~~~bash
 # aio on;
 ~~~
 
 언젠간 저 모듈을 공부하고 사용할 날이 올 수 있으니 앞에 # 으로 주석처리만 해주었다.
 다시 nginx를 실행시키자
 
-~~~
+~~~bash
 $ netstat -antu
 ~~~
 
@@ -178,7 +178,7 @@ $ netstat -antu
 경로 변경은 다음에 하기로 하고 '/mnt/hls/' 폴더 안에 예전에 찍어둔 동영상을 파일질라를 사용해서 넣어봤다. 동영상 이름은 'KPLJ.mp4' 이다. 
 브라우저에 다음과 같이 입력해보자.
 
-~~~
+~~~bash
 http://localhost:8080/KPLJ.mp4
 ~~~
 
