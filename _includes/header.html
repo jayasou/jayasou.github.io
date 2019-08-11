@@ -15,14 +15,16 @@
 	</div>
 	<nav class="site-nav">
 		<ul>
+<!--
 
+            &lt;!&ndash;카테고리 및 About&ndash;&gt;
 			{% if site.theme_settings.site_navigation_sort %}
 			{% assign site_pages = site.pages | sort: site.theme_settings.site_navigation_sort %}
 			{% else %}
 			{% assign site_pages = site.pages %}
 			{% endif %}
 			{% for page in site_pages %}
-			{% if page.title and page.hide == false %}
+			{% if page.title and page.hide != true %}
 			<li>
 				<a class="page-link" href="{{ page.url | relative_url }}">
 					{{ page.title }}
@@ -31,8 +33,10 @@
 			{% endif %}
 			{% endfor %}
 
-			<!-- Social icons from Font Awesome, if enabled  -->
+			&lt;!&ndash; Social icons from Font Awesome, if enabled  &ndash;&gt;
+            &lt;!&ndash;Git 주소 및 다른 주소..&ndash;&gt;
 			{% include icons.html %}
+-->
 
             <!-- Search bar -->
             {% if site.theme_settings.search %}
@@ -51,16 +55,25 @@
 	<div class="site-category">
 		<ul class='cat1'>
 			<li><a href="/">Home</a></li>
-			<li><a href="/">Algorithm</a>
+			<li>
+				<a href="/">Algorithm</a>
 				<ul>
-					<li><a href="/Algorithm/Stack">Stack</a></li>
-					<li><a href="/Algorithm/Queue">Queue</a></li>
+					<li><a href="/Algorithm/DP">DP</a></li>
 				</ul>
 			</li>
-			<li><a href="/">Data Structure</a>
+			<li>
+				<a href="/">Data Structure</a>
 				<ul>
 					<li><a href="/DS/Stack">Stack</a></li>
+					<li><a href="/DS/Queue">Queue</a></li>
+					<li><a href="/DS/Sort">Sort</a></li>
 				</ul>
+			</li>
+			<li>
+				<a href="/Linux">Linux</a>
+			</li>
+			<li>
+				<a href="/Web">Web</a>
 			</li>
 		</ul>
 	</div>
