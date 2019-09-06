@@ -43,7 +43,7 @@ categories: [ComputerVision]
 
 ### 간단한 2차원배열 만들기1
 #### 배열 생성 및 초기화
-~~~
+~~~c++
     int height = 3;
     int width = 4;
     // 1. 2차원 배열 생성
@@ -62,7 +62,7 @@ categories: [ComputerVision]
     }
 ~~~
 #### 메모리해제
-~~~
+~~~c++
     for(int i=0; i<height; i++) {
         delete[] arr[i];
     }
@@ -72,7 +72,7 @@ categories: [ComputerVision]
 
 ### 간단한 2차원배열 만들기2
 #### 배열 생성 및 초기화
-~~~
+~~~c++
     int height = 3;
     int width = 4;
     // 1. 2차원 배열 생성
@@ -87,7 +87,7 @@ categories: [ComputerVision]
 ~~~
 
 #### 메모리해제
-~~~
+~~~c++
     delete[] arr[0];
     delete arr;
 ~~~
