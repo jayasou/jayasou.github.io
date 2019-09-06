@@ -68,7 +68,7 @@ categories: [ComputerVision]
     }
     delete[] arr;
 ~~~
-
+<hr>
 
 ### 간단한 2차원배열 만들기2
 #### 배열 생성 및 초기화
