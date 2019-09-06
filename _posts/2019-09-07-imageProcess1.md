@@ -28,6 +28,8 @@ categories: [ComputerVision]
 1. Unsigned char 자료형은 1바이트 크기를 가지며 0~255까지의 정수를 저장할 수 있다.
     * unsigned가 없는 char 자료형은 -128 ~ 127 까지의 정수를 표현가능
 
+
+
 2. 2차의 배열 크기 지정
     * x축 640, y축 480인 배열을 만들 때 unsigned char a[200][128] 과 같이 정의
     * 2차원 배열을 선언하면 실제 메모리 공간에는 배열 크기만큼 메모리 공간이 연속적으로 할당된다
@@ -42,7 +44,10 @@ categories: [ComputerVision]
 <hr>
 
 ### 간단한 2차원배열 만들기1
-#### 배열 생성 및 초기화
+
+<br/>
+
+* 배열 생성 및 초기화
 ~~~c++
     int height = 3;
     int width = 4;
@@ -61,17 +66,25 @@ categories: [ComputerVision]
         memset(arr[i], 0, sizeof(unsigned char)* width);
     }
 ~~~
-#### 메모리해제
+<br/>
+
+* 메모리해제
 ~~~c++
     for(int i=0; i<height; i++) {
         delete[] arr[i];
     }
     delete[] arr;
 ~~~
+<br/>
+
+![arr1](/images/arr1.png)
+
 <hr>
 
 ### 간단한 2차원배열 만들기2
-#### 배열 생성 및 초기화
+<br/>
+
+* 배열 생성 및 초기화
 ~~~c++
     int height = 3;
     int width = 4;
@@ -85,8 +98,9 @@ categories: [ComputerVision]
         arr[i] = arr[i-1] + width;
     memset(arr[0], 0, width * height);
 ~~~
+<br/>
 
-#### 메모리해제
+* 메모리해제
 ~~~c++
     delete[] arr[0];
     delete arr;
