@@ -105,3 +105,6 @@ categories: [ComputerVision]
     delete[] arr[0];
     delete arr;
 ~~~
+<br/>
+
+![arr2](/images/arr2.png)
