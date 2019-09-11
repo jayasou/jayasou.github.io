@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2-1. 번외 : 구조체 메모리
+title: 2-1. 구조체 메모리
 comments: true
 categories: [ComputerVision]
 ---
