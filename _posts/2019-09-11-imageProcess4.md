@@ -91,7 +91,7 @@ void IppGammaCorrectionOptimal(IppByteImage& img, float gamma) {
 > 영상의 그레이스케일 값에 해당하는 픽셀의 개수를 표현
 
 $$
-h(g) = n~g~
+h(g) = n_g
 $$
 
 <br/><br/>
@@ -99,7 +99,7 @@ $$
 ### 히스토그램 스트레칭
 
 $$
-g(x,y) = \frac{f(x,y)-G~min~}{G~max~-G~min~} * 255
+\frac{f(x,y)-G_{min}}{G_{max}-G_{min}} * 255
 $$
 
 <br/><br/>
