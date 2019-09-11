@@ -10,7 +10,7 @@ categories: [ComputerVision]
 
 ![BitMapFile](/images/BitMapFile.png)
 
-<br/><hr><br/>
+<br/><br/>
 
 * 비트맵 파일 헤더
     * 파일 자체에 대한 정보 영역
@@ -24,8 +24,9 @@ categories: [ComputerVision]
     * 색상 정보 표현
         * 그레이스케일 : 각 픽셀당 1바이트를 사용하여 색상 테이블의 인덱스를 가리킨다.
         * 트루컬러 : 각 픽셀당 3바이트를 사용하여 파란색, 녹색, 빨간색 생상 정보 표현한다.
-
-<br/><hr><br/>
+<br/>
+---
+<br/>
 
 ### BMP 파일 헤더
 ~~~c++
@@ -37,6 +38,7 @@ struct BITMAPFILEHEADER {       // 14byte
     DWORD bfOffBits;            // HEADER 크기 ( BITMAPFILEH.. + BITMAPINFOH ..)
 };
 ~~~
+<br/><br/>
 ### BMP 정보 헤더
 ~~~c++
 typedef struct BITMAPINFOHEADER {       // 40byte
@@ -56,6 +58,7 @@ typedef struct BITMAPINFOHEADER {       // 40byte
     DWORD biClrImportant;
 }BITMAPINFOHEADER, *LPBITMAPINFOHEADER;
 ~~~
+<br/><br/>
 ### 색상테이블 (팔레트)
 ~~~c++
 struct RGBQUAD {
@@ -66,13 +69,15 @@ struct RGBQUAD {
 };
 ~~~
 
-<br/><hr><br/>
+<br/>
+---
+<br/>
 
 ### 자료형 알고가기
 필자는 현재 MacOS를 사용중이다. 윈도우를 사용한다면 MFC에서 제공하는 헤더를 이용할 수 있다. <br/>
 하지만 해당 헤더를 사용할 수 없다면 이 부분은 꼭 필요하다. <br/>
 
-1. Window
+1. ***Window***
 > 윈도우OS를 사용한다면 해당 타입의 정의는 다음과 같다.
 ~~~c++
 typdef unsigned char BYTE;      // 1Byte
@@ -81,7 +86,8 @@ typedef unsigned long DWORD;    // 4Byte
 typedef long LONG;              // 4Byte
 ~~~
 
-2. Mac
+2. ***Mac***
+> Mac사용자인 경우엔 다음과 같이 정의하자.
 ~~~c++
 #define BYTE unsigned char      // 1byte
 #define WORD unsigned short     // 2byte
@@ -93,18 +99,23 @@ typedef long LONG;              // 4Byte
 윈도우에서는 굳이 정의할 필요가 없다. <br/>
 하지만 mac에서는 제공하는 헤더를 사용할 수 없으니 위와 같은 방법으로 해당 자료형의 표현을 정의해두면 된다.
 
-<br/><hr><br/>
+<br/>
+---
+<br/>
 
 ### BMP파일 자세히 보기
 
-![bitmap구조](/images/bitmap구조.png)
+![bitmapInfo](/images/bitmapInfo.png)
 <br/><br/>
 
 * bfType : 비트맵 파일임을 명시한다. 'BM'이라는 값 저장
 * bfSize : BMP파일의 크기
 * bfReserved1~2: 예약된 값. 항상 0
 * bfOffBits : BITMAPFILEHEADER 크기 + BITMAPINFOHEADER 크기 + 색상테이블 크기
-<br/><hr><br/>
+<br/>
+
+<br/>
+
 * biSize : BITMAPINFOHEADER 구조체의 크기 (일반적으로 40Byte이지만 아닌 경우엔 DIB이다.)
 * biWidth : 비트맵 가로 크기인 픽셀 단위
 * biHeight : 비트맵의 세로크기인 픽셀 단위
@@ -115,8 +126,10 @@ typedef long LONG;              // 4Byte
     * 1, 4, 8, 16, 24, 32의 값을 가질 수 있다.
 * biCompression : 입축 유형
 * biSizeImage : DIB구조에서 픽셀 데이터를 저장하는데 필요한 메모리 공간의 크기
-<br/>
+<br/><br/>
 ... 나머지 생략 ...
+<br/>
+---
 <br/>
 
 #### 픽셀 데이터
