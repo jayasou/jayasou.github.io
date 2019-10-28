@@ -11,10 +11,7 @@ categories: [ComputerVision]
 (x,y)를 가로로 a만큼, 세로로 b만큼 이동시키는 이동 변환 수식을 표현하면 다음과 같다.
 
 $$
-	\acute{x} = x + a
-$$
-
-$$
+	\acute{x} = x + a\\
 	\acute{y} = y + b
 $$
 
@@ -46,11 +43,8 @@ Translate(imgSrc, imgDst, int sx, int sy) {
 
 ### 크기변환
 $$
-\acute{x} = s_x*x	
-$$
-
-$$
-\acute{y} = s_y*y	
+\acute{x} = s_x*x\\
+\acute{y} = s_y*y
 $$
 
 크기 변환은 입력 영상의 크기를 가로 방향으로 s_x, 세로 방향으로 s_y배로 변환한다. <br>
@@ -64,7 +58,7 @@ for(i from 0 to w-1)
 	pDst[2*j][2*i] = pSrc[j][i]
 ~~~
 
-위와 같이 동작을 할 경우 빈 홀이 생기게 된다. 
+위와 같이 동작을 할 경우 **빈 홀**이 생기게 된다. 
 
 $$
 \begin{bmatrix}
@@ -79,13 +73,11 @@ $$
 \end{bmatrix}
 $$
 
-이런 문제점은 역방향 매핑으로 해결한다. <br>
+이런 문제점은 **역방향 매핑**으로 해결한다. <br>
 역방향 매핑에서는 결과 영상의 각각의 픽셀에 대하여 대응되는 입력 영상의 픽셀 위치를 찾아 그 위치에서의 픽셀 값을 참조한다. 
 
 $$
-x = \acute{x}/s_x
-$$
-$$
+x = \acute{x}/s_x \\
 y = \acute{y}/s_y
 $$
 
@@ -96,7 +88,7 @@ $$
 #### 1. 최근방 이웃 보간법
 
 최근방 이웃 보간법은 빠르고 구현하기 쉽다. <br>
-하지만 픽셀 값이 급격하게 변화하는 계단현상이 나타날 수 있다. <br>
+하지만 픽셀 값이 급격하게 변화하는 **계단현상**이 나타날 수 있다. <br>
 
 ~~~c++
 // nw, nh 는 결과 영상의 가로와 세로 크기
@@ -172,18 +164,65 @@ p와 q는 0부터 1 사이의 값을 갖는 실수이다. <br>
 
 #### 3. 3차 회선 보간법 (...?)
 
+<br>
+---
+<br>
+
 ### 회전변환
 
 $$
-\acute{x} = cos{\theta}*x - sin{\theta}*y
-$$
-$$
+\acute{x} = cos{\theta}*x - sin{\theta}*y\\
 \acute{y} = sin{\theta}*x + cos{\theta}*y
 $$
 
-### 대칭변환
-#### 1. 좌우대칭
-#### 2. 상하대칭
+회전변환을 구현할 때에도 역방향 매핑을 사용해야 비어 있는 픽셀이 생기지 않는다.
 
+$$
+x=cos{\theta}*\acute{x} + sin{\theta}*\acute{y}\\
+y=-sin{\theta}*\acute{x} + cos{\theta}*\acute{y}
+$$
+
+#### 특수각도 회전
+
+**90도 회전**
+$$
+\acute{x} = h -1 -y\\
+\acute{y} = x
+$$
+<br>
+
+**180도 회전**
+$$
+\acute{x} = w -1 -x\\
+\acute{y} = h -1 -y
+$$
+<br>
+
+**270도 회전**
+$$
+\acute{x} = y\\
+\acute{y} = w -1 -x
+$$
+
+<br>
+---
+<br>
+
+### 대칭변환 
+<br>
+
+#### 1. 좌우대칭
+$$
+\acute{x} = w -1 -x\\
+\acute{y} = h -1 -y
+$$
+<br>
+
+#### 2. 상하대칭
+$$
+\acute{x} = x\\
+\acute{y} = h -1 -y
+$$
+<br>
 
 [참조](http://blog.daum.net/shksjy/220)
