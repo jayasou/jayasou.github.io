@@ -189,7 +189,7 @@ NoiseSaltNPepper(imgSrc, imgDst, int amount) {
 }
 ~~~
 
-amount 값이 20이면 잡음이 추가될 픽셀의 개수는 100*100*(20/100), 즉 2000개이다. <br>
+amount 값이 20이면 잡음이 추가될 픽셀의 개수는 100x100x(20/100), 즉 2000개이다. <br>
 잡음이 추가될 좌표는 distribution(generator) 코드를 사용하였다. <br>
 또한, i가 짝수이면 0이고, 홀수이면 255가 대입되도록 하였다.
 
