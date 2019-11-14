@@ -2,6 +2,6 @@
 
 layout: category
 title: Stack
-permalink: '/DS/Stack'
+permalink: '/Algorithm/Stack'
 
 ---

@@ -2,6 +2,6 @@
 
 layout: category
 title: Queue
-permalink: '/DS/Queue'
+permalink: '/Algorithm/Queue'
 
 ---

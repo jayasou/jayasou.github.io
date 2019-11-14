@@ -2,6 +2,6 @@
 
 layout: category
 title: Sort
-permalink: '/DS/Sort'
+permalink: '/Algorithm/Sort'
 
 ---
