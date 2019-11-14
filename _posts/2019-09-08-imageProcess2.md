@@ -75,7 +75,7 @@ struct RGBQUAD {
 필자는 현재 MacOS를 사용중이다. 윈도우를 사용한다면 MFC에서 제공하는 헤더를 이용할 수 있다. <br/>
 하지만 해당 헤더를 사용할 수 없다면 이 부분은 꼭 필요하다. <br/>
 
-1. ***Window***
+1. ***Window*** <br>
 윈도우OS를 사용한다면 해당 타입의 정의는 다음과 같다.
 ~~~c++
 typdef unsigned char BYTE;      // 1Byte
@@ -84,7 +84,7 @@ typedef unsigned long DWORD;    // 4Byte
 typedef long LONG;              // 4Byte
 ~~~
 
-2. ***Mac***
+2. ***Mac*** <br>
 Mac사용자인 경우엔 다음과 같이 정의하자.
 ~~~c++
 #define BYTE unsigned char      // 1byte
@@ -93,7 +93,6 @@ Mac사용자인 경우엔 다음과 같이 정의하자.
 #define LONG int                // 4byte
 ~~~
 
-<br/>
 윈도우에서는 굳이 정의할 필요가 없다. <br/>
 하지만 mac에서는 제공하는 헤더를 사용할 수 없으니 위와 같은 방법으로 해당 자료형의 표현을 정의해두면 된다.
 
@@ -108,8 +107,6 @@ Mac사용자인 경우엔 다음과 같이 정의하자.
 * bfSize : BMP파일의 크기
 * bfReserved1~2: 예약된 값. 항상 0
 * bfOffBits : BITMAPFILEHEADER 크기 + BITMAPINFOHEADER 크기 + 색상테이블 크기
-<br/>
-
 <br/>
 
 * biSize : BITMAPINFOHEADER 구조체의 크기 (일반적으로 40Byte이지만 아닌 경우엔 DIB이다.)
@@ -143,8 +140,6 @@ Mac사용자인 경우엔 다음과 같이 정의하자.
 |idx|idx|idx|
 |idx|idx|idx|
 
-<br/>
-
 * 그레이스케일 비트맵 ( 한칸당 1Byte)
 
 |   |   |   |   |
@@ -153,7 +148,6 @@ Mac사용자인 경우엔 다음과 같이 정의하자.
 |idx|idx|idx|0|
 |idx|idx|idx|0|
 
-<br/>
 * 트루컬러 비트맵 ( 한 칸당 3Byte )
 
 |   |   |   |   |

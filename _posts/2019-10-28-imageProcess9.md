@@ -15,7 +15,7 @@ $$
 	\acute{y} = y + b
 $$
 
-![translate](/images/translate.png){: width="80%" height="auto"}
+![translate](/images/translate.png){: width="60%" height="auto"}
 
 ~~~c++
 // sx , sy 는 이동할 크기
@@ -45,7 +45,7 @@ $$
 $$
 
 크기 변환은 입력 영상의 크기를 가로 방향으로 s_x, 세로 방향으로 s_y배로 변환한다. <br>
-![resize](/images/resize.png){: width="80%" height="auto"}
+![resize](/images/resize.png){: width="60%" height="auto"}
 
 <hr>
 
@@ -122,7 +122,7 @@ ResizeNearest(imgSrc, imgDst, nw, nh) {
 다음의 그림과 같이 최종 픽셀 값 z를 구할 수 있다. 
 좌표에서 픽셀 값은 a,b,c,d이다.
 
-![resizeBilinear](/images/resizeBilinear.png){: width="80%" height="auto"}
+![resizeBilinear](/images/resizeBilinear.png){: width="60%" height="auto"}
 
 z를 구하는 수식은 다음과 같다.
 
@@ -160,7 +160,7 @@ ResizeBilinear(imgSrc, imgDst, nw, nh) {
 }
 ~~~
 
-![resizeBilinear2](/images/resizeBilinear2.png){: width="80%" height="auto"}
+![resizeBilinear2](/images/resizeBilinear2.png){: width="70%" height="auto"}
 
 x1, x2, y1, y2는 (rx, ry) 좌표를 둘러싼 4개의 픽셀 좌표이다. <br>
 p와 q는 0부터 1 사이의 값을 갖는 실수이다. <br>

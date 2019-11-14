@@ -81,7 +81,7 @@ HistogramStretching() {
     }
 }
 ~~~
-<br/><br/>
+<hr>
 
 #### 히스토그램 균등화 - 다시 공부하기
 

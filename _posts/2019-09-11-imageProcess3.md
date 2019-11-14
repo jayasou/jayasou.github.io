@@ -15,12 +15,12 @@ struct BITMAPFILEHEADER {       // 14byte
     DWORD bfOffBits;            // HEADER 크기 ( BITMAPFILEH.. + BITMAPINFOH ..)
 };
 ~~~
-<br/><br/>
+<hr>
 
 우리들은 위와 같이 헤더 정보를 구조체로 저장되도록 만들어 놓았다. <br/>
-조금 더 간단하게 만들어보자. <br/><br/>
+조금 더 간단하게 만들어보자. <br/>
 
-***TEST 구조체***
+**TEST 구조체**
 ~~~c++
 struct TEST {     
     char students[10];
@@ -28,8 +28,8 @@ struct TEST {
     short course;
 };
 ~~~
-<br/><br/>
-***메모리 출력***
+<br/>
+**메모리 출력**
 ~~~c++
 int main() {
     cout << "char[10] : " << sizeof(char)*10 << endl;
@@ -39,17 +39,16 @@ int main() {
     return 0;
 }
 ~~~
-<br/><br/>
-***출력 결과***
+<br/>
+**출력 결과**
 ~~~c++
     char[10] : 10
     int : 4
     long : 8
     TEST : 24
 ~~~
-<br/>
 
-TEST의 메모리는 10 + 4 + 8 의 결과값 22가 되어야 한다. 
+**TEST의 메모리는 10 + 4 + 8 의 결과값 22가 되어야 한다.**
 
 <hr>
 

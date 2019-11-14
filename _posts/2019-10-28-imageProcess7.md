@@ -7,7 +7,7 @@ categories: [ComputerVision]
 
 ### 공간적 필터링
 
-![filter](/images/filter.png){: width="80%" height="auto"}
+![filter](/images/filter.png){: width="60%" height="auto"}
 <br>
 영상을 부드럽게 만들거나, 엣지를 강조하여 날카롭게 만드는 **마스크 연산**은 입력을 어떤 시스템에 통과시켰을 때 전혀 다른 함수의 출력을 나타낸다. <br>
 
