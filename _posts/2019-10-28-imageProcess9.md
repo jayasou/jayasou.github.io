@@ -15,7 +15,7 @@ $$
 	\acute{y} = y + b
 $$
 
-![translate](/images/translate.png)
+![translate](/images/translate.png){: width="80%" height="auto"}
 
 ~~~c++
 // sx , sy 는 이동할 크기
@@ -36,10 +36,7 @@ Translate(imgSrc, imgDst, int sx, int sy) {
 }
 ~~~
 
-<br>
----
-<br>
-
+<hr>
 
 ### 크기변환
 $$
@@ -48,7 +45,9 @@ $$
 $$
 
 크기 변환은 입력 영상의 크기를 가로 방향으로 s_x, 세로 방향으로 s_y배로 변환한다. <br>
-![resize](/images/resize.png)
+![resize](/images/resize.png){: width="80%" height="auto"}
+
+<hr>
 
 **순방향 매핑의 문제점** <br>
 
@@ -85,6 +84,8 @@ $$
 위의 식으로 계산했을 때, x,y 값이 실수형으로 계산되는데 이를 결정하기위해 **보간법**을 이용한다. <br>
 보간법은 주변 픽셀 값들을 이용하여 원하는 위치의 값을 추정하는 방법이다. <br>
 
+<hr>
+
 #### 1. 최근방 이웃 보간법
 
 최근방 이웃 보간법은 빠르고 구현하기 쉽다. <br>
@@ -111,7 +112,9 @@ ResizeNearest(imgSrc, imgDst, nw, nh) {
 ~~~
 
 결과 영상의 좌푯값을 가로, 세로 확대 비율로 나누어주고, <br>
-그 값을 정수형으로 변환하여 참조할 원본 영상의 좌표를 사용하는 방식이다. <br><br>
+그 값을 정수형으로 변환하여 참조할 원본 영상의 좌표를 사용하는 방식이다. 
+
+<hr>
 
 #### 2. 양선형 보간법
 
@@ -119,7 +122,7 @@ ResizeNearest(imgSrc, imgDst, nw, nh) {
 다음의 그림과 같이 최종 픽셀 값 z를 구할 수 있다. 
 좌표에서 픽셀 값은 a,b,c,d이다.
 
-![resizeBilinear](/images/resizeBilinear.png)
+![resizeBilinear](/images/resizeBilinear.png){: width="80%" height="auto"}
 
 z를 구하는 수식은 다음과 같다.
 
@@ -157,16 +160,16 @@ ResizeBilinear(imgSrc, imgDst, nw, nh) {
 }
 ~~~
 
-![resizeBilinear2](/images/resizeBilinear2.png)
+![resizeBilinear2](/images/resizeBilinear2.png){: width="80%" height="auto"}
 
 x1, x2, y1, y2는 (rx, ry) 좌표를 둘러싼 4개의 픽셀 좌표이다. <br>
 p와 q는 0부터 1 사이의 값을 갖는 실수이다. <br>
 
+<hr>
+
 #### 3. 3차 회선 보간법 (...?)
 
-<br>
----
-<br>
+<hr>
 
 ### 회전변환
 
@@ -204,9 +207,7 @@ $$
 \acute{y} = w -1 -x
 $$
 
-<br>
----
-<br>
+<hr>
 
 ### 대칭변환 
 <br>
@@ -216,7 +217,8 @@ $$
 \acute{x} = w -1 -x\\
 \acute{y} = h -1 -y
 $$
-<br>
+
+<hr>
 
 #### 2. 상하대칭
 $$

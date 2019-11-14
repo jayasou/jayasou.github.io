@@ -5,17 +5,18 @@ comments: true
 categories: [Web]
 ---
 
-# jenkins 아이템 등록하기
+### jenkins 아이템 등록하기
 
-## 새로운 Item
+#### 새로운 Item
 
 아이템은 하나의 프로젝트라고 생각하시면 됩니다. 저는 jenkins에 등록된 프로젝트를 자동빌드, 배포가 되도록 설정해놓았습니다. 아이템을 등록하기 위해서 메뉴 상단에 새로운 Item을 클릭합니다.
 
 ![jenkins-new-item](/images/jenkins-new-item.png)
 
 이런 페이지가 나오게 됩니다. 제일 위에 있는 Freestyle project를 클릭하시고 생성할 프로젝트 명을 적어주시면 됩니다. 저는 github의 프로젝트명과 동일하게 작성하였습니다. 
+<hr>
 
-## 프로젝트 구성
+### 프로젝트 구성
 
 #### 소스코드관리
 
@@ -28,6 +29,7 @@ git의 ssh 주소는 자신의 github 주소아래 프로젝트에서 가져올 
 ![jenkins-소스코드관리](/images/jenkins-소스코드관리.png)
 
 저의 소스코드관리 설정은 위와 같은 모습으로 되어있습니다.
+<hr>
 
 #### 빌드유발
 
@@ -36,6 +38,7 @@ git의 ssh 주소는 자신의 github 주소아래 프로젝트에서 가져올 
 ![jenkins-빌드유발](/images/jenkins-빌드유발.png)
 
 이렇게 빌드유발에서 설정하시면 됩니다.
+<hr>
 
 #### 빌드
 

@@ -5,26 +5,29 @@ comments: true
 categories: [Web]
 ---
 
-##  nginx 다운로드
+####  nginx 다운로드
 
 ~~~bash
 $ wget http://nginx.org/download/nginx-1.7.5.tar.gz
 ~~~
+<hr>
 
-## nginx-rtmp-module 다운로드
+#### nginx-rtmp-module 다운로드
 
 ~~~bash
 $ wget https://github.com/arut/nginx-rtmp-module/zipball/master
 ~~~
+<hr>
 
-## /usr/local/scr 폴더에 압축 해제
+#### /usr/local/scr 폴더에 압축 해제
 
 ~~~bash
 $ tar -zxvf nginx-1.7.5.tar.gz
 $ unzip master.zip
 ~~~
+<hr>
 
-## Build 하기 
+#### Build 하기 
 
 압축을 해제하고 나면 nginx-1.7.5 폴더가 생성된다. 이 폴더 안으로 들어가면 configure 이라는 파일이 있다. 이 파일을 다음과 같은 명령어로 실행시키자.
 
@@ -41,7 +44,7 @@ $ ./configure --add-module=/usr/local/scr/nginx-rtmp-module --with-debug
 error --with-http_ssl_module', exiting and error: SSL modules require the OpenSSL
 ~~~
 
-자, 이럴 때는 빌드명령어를 다음과 같이 적어준다.
+**자, 이럴 때는 빌드명령어를 다음과 같이 적어준다.**
 
 ~~~bash
 $ ./configure --add-module=/usr/local/scr/nginx-rtmp-module --with-debug --with-http_ssl_module
@@ -63,9 +66,9 @@ $ make install
 make 명령어는 설치하려고 하는 패키지의 모든 실행 파일들을 컴파일한다.
 make install 은 파일들을 적당한 디렉토리에 설치한다.
 이 명령어를 수행하고 나면 /usr/local/nginx라는 폴더가 생긴다. 수행하고 난 뒤 결과에서 생성된 파일들이 나와있으니 확인해보자.
+<hr>
 
-
-## nginx.conf 설정파일을 들여다보자
+#### nginx.conf 설정파일을 들여다보자
 
 이렇게 만들어진 nginx 의 설정파일은 그냥 nginx 를 설치했을 때와 다른 설정들이 담겨져있다. 필자는 다음과 같이 생성되었다. 
 아차! 이 설정파일은 '/usr/local/nginx/conf' 폴더 밑에 nginx.conf 파일이다. 설치 후 생성된 nginx 폴더 아래에 있다는 것을 주의하자!
@@ -138,7 +141,9 @@ http {
     }
 }
 ~~~
-## nginx 실행시키기
+<hr>
+
+#### nginx 실행시키기
 
 nginx 실행파일은 '/usr/local/nginx/sbin' 아래에 nginx 로 되어있다. 다음의 명령어로 실행시켜보자.
 
@@ -171,8 +176,9 @@ $ netstat -antu
 
 위의 명령어를 사용해서 nginx가 어떤 포트들을 이용하는지 확인하자.
 1935, 8080 포트를 이용하는 것을 알 수 있다.
+<hr>
 
-## 비디오 스트리밍
+#### 비디오 스트리밍
 진짜 스트리밍을 해볼까
 다시 nginx.conf 를 들여다 보면 rtmp 안의 server 는 1935 포트를 사용한다. 그 안의 application 내용을 보면 hls 경로가 /mnt/hls/라고 되어 있다. 이 폴더 아래에 자신이 스트리밍 하고 싶은 혹은 전달하고 싶은 파일들을 넣어두면 된다. 경로를 바꾸고 싶다면은 바꾸는 것도 가능하다.
 경로 변경은 다음에 하기로 하고 '/mnt/hls/' 폴더 안에 예전에 찍어둔 동영상을 파일질라를 사용해서 넣어봤다. 동영상 이름은 'KPLJ.mp4' 이다. 

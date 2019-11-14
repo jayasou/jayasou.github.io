@@ -5,7 +5,7 @@ comments: true
 categories: [ComputerVision]
 ---
 
-### 구조체 메모리 누수
+#### 구조체 메모리 누수
 ~~~c++
 struct BITMAPFILEHEADER {       // 14byte
     WORD bfType;                // BM
@@ -49,9 +49,9 @@ int main() {
 ~~~
 <br/>
 
-> TEST의 메모리는 10 + 4 + 8 의 결과값 22가 되어야 한다. 
+TEST의 메모리는 10 + 4 + 8 의 결과값 22가 되어야 한다. 
 
-<br/><br/>
+<hr>
 
 ***왜 결과값이 다를까?***
 <br/>
@@ -62,8 +62,9 @@ int main() {
 해당 컴퓨터는 4바이트씩 자료를 읽어들인다. <br/>
 혹은 변수의 자료형을 변경했을 때 8바이트씩 읽어들인다. <br/><br/>
 
+<hr>
 
-### 해결법 - 구조체 정렬하기
+#### 해결법 - 구조체 정렬하기
 
 ***pragma pack(push, n)***
 
@@ -78,5 +79,5 @@ struct BITMAPFILEHEADER {       // 14byte나와야된다는디.
 };
 #pragma pack(pop)
 ~~~
-> pragma 이용해서 2바이트씩 push와 pop을 진행한다. 1바이트씩 push와 pop을 할 수도 있다.
+pragma 이용해서 2바이트씩 push와 pop을 진행한다. 1바이트씩 push와 pop을 할 수도 있다.
 1, 2, 4, 8, 16을 입력할 수 있다.

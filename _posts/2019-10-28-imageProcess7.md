@@ -7,7 +7,7 @@ categories: [ComputerVision]
 
 ### 공간적 필터링
 
-![filter](/images/filter.png)
+![filter](/images/filter.png){: width="80%" height="auto"}
 <br>
 영상을 부드럽게 만들거나, 엣지를 강조하여 날카롭게 만드는 **마스크 연산**은 입력을 어떤 시스템에 통과시켰을 때 전혀 다른 함수의 출력을 나타낸다. <br>
 
@@ -25,11 +25,9 @@ $$
 * 가상의 픽셀
 	* 최외곽 바깥에 0 또는 주변의 픽셀 값을 복사하여 사용한다.
  
-<br>
----
-<br>
+<hr>
 
-### 평균값 필터 
+#### 평균값 필터 
 
 $$
  \frac{1}{9}*\begin{bmatrix}
@@ -70,12 +68,9 @@ FilterMean(imgSrc, imgDst) {
 	}
 }
 ~~~
+<hr>
 
-<br>
----
-<br>
-
-### 가중 평균 값 필터
+#### 가중 평균 값 필터
 
 평균 값 필터의 경우 마스크의 크기가 커질수록 원래 픽셀의 정보가 감소된다. <br>
 이를 보안하기 위해, 가운데 위치한 픽셀에 가중치를 주는 방법이 있다. <br>
@@ -90,31 +85,27 @@ $$
 
 일반 평균 값 필터결과보다 원복 픽셀의 정보를 많이 간직하고 있기 때문에, 엣지 부분이 더 선명한 결과를 보여준다. 
 
-<br>
----
-<br>
+<hr>
 
-### 가우시안 필터
+#### 가우시안 필터
 
 $$
 	G_\sigma(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{x^2}{2\sigma^2}}
 $$
 
-![Gaussian1](/images/Gaussian1.png) <br>
+![Gaussian1](/images/Gaussian1.png){: width="80%" height="auto"}
 
 Sigma 값이 클수록 높이는 낮지만 폭은 넓어지므로, 많은 저주파 성분을 통과시킨다. <br>
 반면에, Sigma값이 작을 수록 적은 저주파 성분만 통과시킨다. <br><br>
-
-
 영상과 같은 2차원 공간에서의 가우시안 함수는 다음과 같다.
 
 $$
 	G_\sigma(x, y) = \frac{1}{\sqrt{2\pi}\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}
 $$
 
-![Gaussian2](/images/Gaussian2.png) <br>
+![Gaussian2](/images/Gaussian2.png){: width="80%" height="auto"} <br>
 
-![Gaussian2](/images/Gaussian3.png) <br>
+![Gaussian2](/images/Gaussian3.png){: width="80%" height="auto"} <br>
 
 마스크의 크기가 커질수록 연산 속도가 급격히 증가한다. 때문에 가우스 필터를 수행해야 할 경우에는 2차원 함수를 1차원 함수로 변형한다. <br>
 
@@ -125,9 +116,6 @@ $$
 x방향으로의 함수와 y방향으로의 함수로 각각 분리한다. <br>
 입력 영상을 x방향과 y방향으로 1차원 마스크 연산을 수행한다.
 
-
-<br>
----
-<br>
+<hr>
 
 [Visual c++ 영상처리 프로그래밍](https://thebook.io/006796/ch08/02/03/)

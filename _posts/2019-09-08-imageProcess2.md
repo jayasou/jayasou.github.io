@@ -5,12 +5,12 @@ comments: true
 categories: [ComputerVision]
 ---
 
-### BMP파일 구조
+#### BMP파일 구조
 <br/>
 
-![BitMapFile](/images/BitMapFile.png)
+![BitMapFile](/images/BitMapFile.png){: width="80%" height="auto"}
 
-<br/><br/>
+<hr>
 
 * 비트맵 파일 헤더
     * 파일 자체에 대한 정보 영역
@@ -24,11 +24,9 @@ categories: [ComputerVision]
     * 색상 정보 표현
         * 그레이스케일 : 각 픽셀당 1바이트를 사용하여 색상 테이블의 인덱스를 가리킨다.
         * 트루컬러 : 각 픽셀당 3바이트를 사용하여 파란색, 녹색, 빨간색 생상 정보 표현한다.
-<br/>
----
-<br/>
+<hr>
 
-### BMP 파일 헤더
+#### BMP 파일 헤더
 ~~~c++
 struct BITMAPFILEHEADER {       // 14byte
     WORD bfType;                // BM
@@ -38,8 +36,9 @@ struct BITMAPFILEHEADER {       // 14byte
     DWORD bfOffBits;            // HEADER 크기 ( BITMAPFILEH.. + BITMAPINFOH ..)
 };
 ~~~
-<br/><br/>
-### BMP 정보 헤더
+<hr>
+
+#### BMP 정보 헤더
 ~~~c++
 typedef struct BITMAPINFOHEADER {       // 40byte
     DWORD biSize;               // BITMAPINFOHEADER 크기
@@ -58,8 +57,9 @@ typedef struct BITMAPINFOHEADER {       // 40byte
     DWORD biClrImportant;
 }BITMAPINFOHEADER, *LPBITMAPINFOHEADER;
 ~~~
-<br/><br/>
-### 색상테이블 (팔레트)
+<hr>
+
+#### 색상테이블 (팔레트)
 ~~~c++
 struct RGBQUAD {
     BYTE rgbBlue;
@@ -69,16 +69,14 @@ struct RGBQUAD {
 };
 ~~~
 
-<br/>
----
-<br/>
+<hr>
 
-### 자료형 알고가기
+#### 자료형 알고가기
 필자는 현재 MacOS를 사용중이다. 윈도우를 사용한다면 MFC에서 제공하는 헤더를 이용할 수 있다. <br/>
 하지만 해당 헤더를 사용할 수 없다면 이 부분은 꼭 필요하다. <br/>
 
 1. ***Window***
-> 윈도우OS를 사용한다면 해당 타입의 정의는 다음과 같다.
+윈도우OS를 사용한다면 해당 타입의 정의는 다음과 같다.
 ~~~c++
 typdef unsigned char BYTE;      // 1Byte
 typedef unsigned short WORD;    // 2Byte
@@ -87,7 +85,7 @@ typedef long LONG;              // 4Byte
 ~~~
 
 2. ***Mac***
-> Mac사용자인 경우엔 다음과 같이 정의하자.
+Mac사용자인 경우엔 다음과 같이 정의하자.
 ~~~c++
 #define BYTE unsigned char      // 1byte
 #define WORD unsigned short     // 2byte
@@ -99,13 +97,11 @@ typedef long LONG;              // 4Byte
 윈도우에서는 굳이 정의할 필요가 없다. <br/>
 하지만 mac에서는 제공하는 헤더를 사용할 수 없으니 위와 같은 방법으로 해당 자료형의 표현을 정의해두면 된다.
 
-<br/>
----
-<br/>
+<hr>
 
-### BMP파일 자세히 보기
+#### BMP파일 자세히 보기
 
-![bitmapInfo](/images/bitmapInfo.png)
+![bitmapInfo](/images/bitmapInfo.png){: width="80%" height="auto"}
 <br/><br/>
 
 * bfType : 비트맵 파일임을 명시한다. 'BM'이라는 값 저장
@@ -128,9 +124,7 @@ typedef long LONG;              // 4Byte
 * biSizeImage : DIB구조에서 픽셀 데이터를 저장하는데 필요한 메모리 공간의 크기
 <br/><br/>
 ... 나머지 생략 ...
-<br/>
----
-<br/>
+<hr>
 
 #### 픽셀 데이터
 일반적으로 비트맵은 상하가 뒤집힌 상태로 저장이 된다. 이때 180도 회전한 상태가 아니라는 점을 주의! <br/>
@@ -139,6 +133,7 @@ typedef long LONG;              // 4Byte
 트루컬러 영상일때는 어떨까<br/>
 트루컬러는 한 픽셀당 RGB 3Byte가 저장된다. 여분의 픽셀 값도 3Byte가 저장이 되어야 한다.<br/>
 3x3 인 영상이고 트루컬러일 때 총 12Byte가 저장된다.<br/>
+<hr>
 
 * 원본 영상 ( 한칸당 1Byte)
 
