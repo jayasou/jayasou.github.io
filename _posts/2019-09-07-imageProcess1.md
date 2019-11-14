@@ -77,7 +77,7 @@ categories: [ComputerVision]
 ~~~
 <br/>
 
-![arr1](/images/arr1.png){: width="60%" height="auto"}
+![arr1](/images/arr1.png){: width="80%" height="auto"}
 
 <hr>
 
@@ -107,4 +107,4 @@ categories: [ComputerVision]
 ~~~
 <br/>
 
-![arr2](/images/arr2.png){: width="60%" height="auto"}
+![arr2](/images/arr2.png){: width="80%" height="auto"}
