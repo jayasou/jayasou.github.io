@@ -107,4 +107,4 @@ categories: [ComputerVision]
 ~~~
 <br/>
 
-![arr2](/images/arr2.png)
+![arr2](/images/arr2.png) {: width="60%" height="auto"}
