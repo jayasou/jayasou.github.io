@@ -33,7 +33,7 @@ $$
 
 실제 구현에서는 이차 미분을 이용한 마스크 연산을 많이 사용한다. <br>
 
-![unsharp](/images/unsharp.png){: width="50%" height="auto"}
+![unsharp](/images/unsharp.png){: width="auto" height="200px"}
 
 * 그림 (a) : 입력 영상에서 엣지 부분의 값의 변화를 1차원 함수로 표현
 * 그림 (b) : 1차원 함수를 미분한 결과
