@@ -98,4 +98,5 @@ categories: [ComputerVision]
     delete arr;
 ~~~
 
+
 ![arr2](/images/arr2.png){: width="80%" height="auto"}
